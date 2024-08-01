@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_ui/view/homepage/trials_page.dart';
+import 'package:invoice_ui/view/login_view.dart';
+import 'package:invoice_ui/view/profile_view/profile.dart';
 import 'package:invoice_ui/view/register_view.dart';
 
 void main() {
@@ -18,7 +21,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple,brightness: Brightness.dark,),
         useMaterial3: true,
       ),
-      home: const RegisterView()
+      home: Profile()
     );
   }
 }
