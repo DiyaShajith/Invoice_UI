@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_ui/view/login_view.dart';
+import 'package:invoice_ui/view/profile_view/profile_edit.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -14,10 +16,16 @@ class _ProfileState extends State<Profile> {
     return Scaffold(backgroundColor: Color(0XFF111318),
       appBar: AppBar(backgroundColor: Color(0XFF111318),
         actions: [
-          Icon(
-            Icons.edit_calendar_outlined,
-            color: Colors.white,
-            size: 30,
+          InkWell(onTap: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ProfileEdit(),
+              )),
+            child: Icon(
+              Icons.edit_calendar_outlined,
+              color: Colors.white,
+              size: 30,
+            ),
           ),
           SizedBox(
             width: 10,
@@ -95,7 +103,11 @@ class _ProfileState extends State<Profile> {
                                 Icons.logout_outlined,
                                 color: Colors.red,
                               ),
-                              onPressed: () {},
+                              onPressed: () {Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => LoginView(),
+                                  ));},
                               label: Text(
                                 "Logout",
                                 style: TextStyle(

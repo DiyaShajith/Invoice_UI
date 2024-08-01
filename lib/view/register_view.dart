@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'login_view.dart';
+
 class RegisterView extends StatefulWidget {
   const RegisterView({super.key});
 
@@ -182,7 +184,9 @@ class _RegisterViewState extends State<RegisterView> {
                       Icons.arrow_forward,
                     ),
                     iconAlignment: IconAlignment.end,
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginView(),));
+                    },
                     label: Text(
                       "Sign Up",
                       style: TextStyle(
@@ -205,7 +209,11 @@ class _RegisterViewState extends State<RegisterView> {
                         fontWeight: FontWeight.w600),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => LoginView(),
+                          ));},
                       child: Text(
                         "Login In",
                         style: TextStyle(

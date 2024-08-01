@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_ui/view/register_view.dart';
+
+import 'navigationbar.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key});
@@ -113,7 +116,10 @@ class _LoginViewState extends State<LoginView> {
                           fontSize: 18,
                           fontWeight: FontWeight.w600),
                     )),
-              ),SizedBox(height: 15,),
+              ),
+              SizedBox(
+                height: 15,
+              ),
               TextButton(
                   onPressed: () {},
                   child: Text(
@@ -135,7 +141,11 @@ class _LoginViewState extends State<LoginView> {
                       Icons.arrow_forward,
                     ),
                     iconAlignment: IconAlignment.end,
-                    onPressed: () {},
+                    onPressed: () {Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Navigationbar(),
+                        ));},
                     label: Text(
                       "Sign in",
                       style: TextStyle(
@@ -158,7 +168,13 @@ class _LoginViewState extends State<LoginView> {
                         fontWeight: FontWeight.w600),
                   ),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => RegisterView(),
+                            ));
+                      },
                       child: Text(
                         "Sign up now!",
                         style: TextStyle(

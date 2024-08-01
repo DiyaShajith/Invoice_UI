@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:invoice_ui/view/profile_view/profile.dart';
 
 class ProfileEdit extends StatefulWidget {
   const ProfileEdit({super.key});
@@ -144,7 +145,13 @@ class _ProfileEditState extends State<ProfileEdit> {
                     Icons.arrow_forward,
                   ),
                   iconAlignment: IconAlignment.end,
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => Profile(),
+                        ));
+                  },
                   label: Text(
                     "Update",
                     style: TextStyle(
