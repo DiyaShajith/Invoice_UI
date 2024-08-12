@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:invoice_ui/view/login_view.dart';
 import 'package:invoice_ui/view/profile_view/profile_edit.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -10,24 +11,37 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  void issave() async {
+    final prefers = await SharedPreferences.getInstance();
+    prefers.setBool("key", false);
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => const LoginView(),
+        ));
+  }
+
   @override
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
-    return Scaffold(backgroundColor: Color(0XFF111318),
-      appBar: AppBar(backgroundColor: Color(0XFF111318),
+    return Scaffold(
+      backgroundColor: const Color(0XFF111318),
+      appBar: AppBar(
+        backgroundColor: const Color(0XFF111318),
         actions: [
-          InkWell(onTap: () => Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ProfileEdit(),
-              )),
-            child: Icon(
+          InkWell(
+            onTap: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProfileEdit(),
+                )),
+            child: const Icon(
               Icons.edit_calendar_outlined,
               color: Colors.white,
               size: 30,
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
         ],
@@ -42,73 +56,73 @@ class _ProfileState extends State<Profile> {
                   width: size.width,
                   height: size.height * 0.35,
                   decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(15),
-                      ),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
                 ),
                 Positioned(
                   bottom: 0,
                   left: 0,
                   right: 0,
                   child: Container(
-                    padding: EdgeInsets.all(12),
+                    padding: const EdgeInsets.all(12),
                     width: size.width,
-
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Color(0XFF0F0F0F)),
+                        color: const Color(0XFF0F0F0F)),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [SizedBox(height: 20,),
-                        Text(
+                      children: [
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Text(
                           "David",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
-                        Text(
+                        const Text(
                           "david0012@gmail.com",
                           style: TextStyle(
                               color: Color(0XFFB5CDFE),
                               fontWeight: FontWeight.w600,
                               fontSize: 18),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 20,
                         ),
-                        Text(
+                        const Text(
                           "Contact",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.bold,
                               fontSize: 18),
                         ),
-                        Text(
+                        const Text(
                           "7894561230",
                           style: TextStyle(
                               color: Colors.white,
                               fontWeight: FontWeight.w600,
                               fontSize: 18),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 50,
                         ),
                         SizedBox(
                           width: double.infinity,
                           child: ElevatedButton.icon(
-                              style: ButtonStyle(
+                              style: const ButtonStyle(
                                   backgroundColor:
                                       WidgetStatePropertyAll(Colors.black)),
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.logout_outlined,
                                 color: Colors.red,
                               ),
-                              onPressed: () {Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => LoginView(),
-                                  ));},
-                              label: Text(
+                              onPressed: () {
+                                issave();
+                              },
+                              label: const Text(
                                 "Logout",
                                 style: TextStyle(
                                     color: Colors.red,
@@ -119,13 +133,17 @@ class _ProfileState extends State<Profile> {
                       ],
                     ),
                   ),
-                ), Align(alignment: Alignment.center,
+                ),
+                Align(
+                  alignment: Alignment.center,
                   child: Container(
                     width: 80,
                     height: 80,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(15),
-                        color: Color(0XFF111318),image: DecorationImage(image: AssetImage("assets/images/pngaaa 1.png"))),
+                        color: const Color(0XFF111318),
+                        image: const DecorationImage(
+                            image: AssetImage("assets/images/pngaaa 1.png"))),
                   ),
                 ),
               ],
