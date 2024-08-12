@@ -14,7 +14,7 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   void issave() async {
     final prefers = await SharedPreferences.getInstance();
-    prefers.setBool("key", true);
+    prefers.setBool("islogin", true);
     Navigator.push(
         context,
         MaterialPageRoute(

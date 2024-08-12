@@ -5,6 +5,7 @@ import 'package:invoice_ui/view/navigationbar.dart';
 import 'package:invoice_ui/view/profile_view/profile.dart';
 import 'package:invoice_ui/view/profile_view/profile_edit.dart';
 import 'package:invoice_ui/view/register_view.dart';
+import 'package:invoice_ui/view/splashview.dart';
 
 void main() {
   runApp(const MyApp());
@@ -26,6 +27,6 @@ class MyApp extends StatelessWidget {
           ),
           useMaterial3: true,
         ),
-        home: const LoginView());
+        home: const Splashview());
   }
 }

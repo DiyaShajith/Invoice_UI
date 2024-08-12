@@ -11,20 +11,22 @@ class Navigationbar extends StatefulWidget {
 }
 
 class _NavigationbarState extends State<Navigationbar> {
-  List views = [TrialsPage(), Profile()];
-  int currentindex=0;
+  List views = [const TrialsPage(), const Profile()];
+  int currentindex = 0;
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: views[currentindex],
-      bottomNavigationBar: BottomNavigationBar(currentIndex: currentindex,
+    return Scaffold(
+      body: views[currentindex],
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: currentindex,
           onTap: (value) => setState(() {
-        currentindex=value;
-      }),
-          items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: ""),
-        BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
-      ]),
+                currentindex = value;
+              }),
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home_rounded), label: ""),
+            BottomNavigationBarItem(icon: Icon(Icons.person), label: ""),
+          ]),
     );
   }
 }

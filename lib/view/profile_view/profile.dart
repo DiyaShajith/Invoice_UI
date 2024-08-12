@@ -13,7 +13,7 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   void issave() async {
     final prefers = await SharedPreferences.getInstance();
-    prefers.setBool("key", false);
+    prefers.setBool("islogin", false);
     Navigator.push(
         context,
         MaterialPageRoute(
